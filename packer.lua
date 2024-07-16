@@ -7,8 +7,16 @@ use {
   'nvim-telescope/telescope.nvim', tag = '0.1.8',
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
-
  
+}
+
+use {
+  'rmagatti/auto-session',
+  config = function()
+    require("auto-session").setup {
+      auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+    }
+  end
 }
 
 --color theme one dark
@@ -21,27 +29,21 @@ use('theprimeagen/harpoon')
 use('mbbill/undotree')
 use ('tpope/vim-fugitive')
 
-
-
-
-
 use {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 }
 
 
-use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
 
-use 'mg979/vim-visual-multi'  
- 
+-- Add this to your packer.nvim plugin list
+use {
+  'windwp/nvim-autopairs',
+  config = function()
+    require('nvim-autopairs').setup{}
+  end
+}
+
 end)
 
 
