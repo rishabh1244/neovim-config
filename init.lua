@@ -82,6 +82,7 @@ vim.api.nvim_set_keymap('i', '<BS>', '<BS><C-g>u', { noremap = true, silent = tr
 vim.api.nvim_set_keymap('i', '<C-z>', '<C-o>u', { noremap = true, silent = true })
 --more fast keymaps
 vim.api.nvim_set_keymap('i', '<C-Del>', '<Esc>ddi', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-H>', '<C-W>', { noremap = true })
 
 
 
