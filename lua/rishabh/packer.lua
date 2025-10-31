@@ -10,6 +10,11 @@ return require('packer').startup(function(use)
         tag = '0.1.8',
         requires = { 'nvim-lua/plenary.nvim' }
     }
+    use { 'akinsho/toggleterm.nvim', config = function()
+        require("toggleterm").setup {
+            direction = 'float'
+        }
+    end }
 
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
@@ -17,7 +22,6 @@ return require('packer').startup(function(use)
 
     use 'navarasu/onedark.nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'ThePrimeagen/harpoon'
     use 'nvim-treesitter/playground'
     use {
         'mbbill/undotree',
@@ -41,7 +45,6 @@ return require('packer').startup(function(use)
 
     --file navigator
 
-    use 'wbthomason/packer.nvim' -- Packer manages itself
 
     use {
         "andweeb/presence.nvim",
@@ -98,7 +101,43 @@ return require('packer').startup(function(use)
         neovim_image_text = "The One True Text Editor",
         main_image = "neovim",
         enable_line_number = true,
-        buttons = true,
+        buttons = {},
         show_time = true,
     })
+
+
+    -- REACT !
+    -- React/JS/TS syntax & LSP setup
+    use 'MunifTanjim/prettier.nvim'
+    use 'jose-elias-alvarez/typescript.nvim' -- Extra TypeScript utilities
+    use("nvimtools/none-ls.nvim")            -- instead of jose-elias-alvarez/null-ls.nvim
+
+    -- LSP icons, UI & status
+    use 'onsails/lspkind.nvim'
+    use 'folke/trouble.nvim'
+    use 'folke/todo-comments.nvim'
+
+    -- File explorer
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = 'nvim-tree/nvim-web-devicons',
+        config = function()
+            require("nvim-tree").setup()
+            vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+        end
+    }
+
+    use {
+        'windwp/nvim-ts-autotag',
+        after = 'nvim-treesitter',
+        config = function()
+            require('nvim-ts-autotag').setup()
+        end
+    }
+
+    -- Optional: Emmet-like snippets for HTML/JSX (div>ul>li*3 etc.)
+    use 'mattn/emmet-vim'
+    use 'hrsh7th/cmp-nvim-lsp-signature-help' -- Function signature help
+    use 'dcampos/nvim-snippy'                 -- Alternative snippet engine (optional)
+    use 'honza/vim-snippets'
 end)
