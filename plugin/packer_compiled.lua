@@ -79,6 +79,12 @@ _G.packer_plugins = {
     path = "/home/rizzabh/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["alpha-nvim"] = {
+    config = { "\27LJ\2\n�\n\0\0\t\0\28\00146\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\0019\2\4\0025\3\6\0=\3\5\0029\2\3\0019\2\a\0024\3\6\0009\4\b\1'\6\t\0'\a\n\0'\b\v\0B\4\4\2>\4\1\0039\4\b\1'\6\f\0'\a\r\0'\b\14\0B\4\4\2>\4\2\0039\4\b\1'\6\15\0'\a\16\0'\b\17\0B\4\4\2>\4\3\0039\4\b\1'\6\18\0'\a\19\0'\b\20\0B\4\4\2>\4\4\0039\4\b\1'\6\21\0'\a\22\0'\b\23\0B\4\4\0?\4\0\0=\3\5\0029\2\3\0019\2\24\2'\3\25\0=\3\5\0029\2\26\0009\4\27\1B\2\2\1K\0\1\0\topts\nsetup\31🚀  Happy coding, Rishu!\vfooter\f:qa<CR>\14  Quit\6q\31:ene <BAR> startinsert<CR>\18  New file\6n\29:Telescope live_grep<CR>\19  Live grep\6g\28:Telescope oldfiles<CR>\22  Recent files\6r\30:Telescope find_files<CR>\19  Find file\6f\vbutton\fbuttons\1\a\0\0�\1███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗�\1████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║�\1██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║�\1██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║�\1██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║�\1╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝\bval\vheader\fsection\27alpha.themes.dashboard\nalpha\frequire\v����\4\0" },
+    loaded = true,
+    path = "/home/rizzabh/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/rizzabh/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -226,7 +232,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["presence.nvim"] = {
-    config = { "\27LJ\2\n�\1\0\0\4\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\2\0\0009\0\2\0005\3\3\0B\0\3\1K\0\1\0\1\0\4\23enable_line_number\2\22neovim_image_text\15Neovim IDE\16auto_update\2\15main_image\vneovim\nsetup\rpresence\frequire\0" },
+    config = { "\27LJ\2\n�\1\0\0\4\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\2\0\0009\0\2\0005\3\3\0B\0\3\1K\0\1\0\1\0\4\15main_image\vneovim\23enable_line_number\2\22neovim_image_text\15Neovim IDE\16auto_update\2\nsetup\rpresence\frequire\0" },
     loaded = true,
     path = "/home/rizzabh/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
@@ -291,6 +297,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n�\1\0\0\5\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0'\2\6\0'\3\a\0'\4\b\0B\0\4\1K\0\1\0\24:NvimTreeToggle<CR>\14<leader>e\6n\bset\vkeymap\bvim\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 -- Config for: cord.nvim
 time([[Config for cord.nvim]], true)
 try_loadstring("\27LJ\2\n2\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\tcord\frequire\0", "config", "cord.nvim")
@@ -299,22 +309,22 @@ time([[Config for cord.nvim]], false)
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\2\nO\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\14direction\nfloat\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
 time([[Config for toggleterm.nvim]], false)
--- Config for: undotree
-time([[Config for undotree]], true)
-try_loadstring("\27LJ\2\ny\0\0\6\0\b\0\v6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0006\4\0\0009\4\5\0049\4\6\0045\5\a\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Toggle Undotree\19UndotreeToggle\bcmd\14<leader>u\6n\bset\vkeymap\bvim\0", "config", "undotree")
-time([[Config for undotree]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\5\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\0016\0\3\0009\0\4\0009\0\5\0'\2\6\0'\3\a\0'\4\b\0B\0\4\1K\0\1\0\24:NvimTreeToggle<CR>\14<leader>e\6n\bset\vkeymap\bvim\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\2\n�\n\0\0\t\0\28\00146\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\2\3\0019\2\4\0025\3\6\0=\3\5\0029\2\3\0019\2\a\0024\3\6\0009\4\b\1'\6\t\0'\a\n\0'\b\v\0B\4\4\2>\4\1\0039\4\b\1'\6\f\0'\a\r\0'\b\14\0B\4\4\2>\4\2\0039\4\b\1'\6\15\0'\a\16\0'\b\17\0B\4\4\2>\4\3\0039\4\b\1'\6\18\0'\a\19\0'\b\20\0B\4\4\2>\4\4\0039\4\b\1'\6\21\0'\a\22\0'\b\23\0B\4\4\0?\4\0\0=\3\5\0029\2\3\0019\2\24\2'\3\25\0=\3\5\0029\2\26\0009\4\27\1B\2\2\1K\0\1\0\topts\nsetup\31🚀  Happy coding, Rishu!\vfooter\f:qa<CR>\14  Quit\6q\31:ene <BAR> startinsert<CR>\18  New file\6n\29:Telescope live_grep<CR>\19  Live grep\6g\28:Telescope oldfiles<CR>\22  Recent files\6r\30:Telescope find_files<CR>\19  Find file\6f\vbutton\fbuttons\1\a\0\0�\1███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗�\1████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║�\1██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║�\1██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║�\1██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║�\1╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝\bval\vheader\fsection\27alpha.themes.dashboard\nalpha\frequire\v����\4\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 -- Config for: presence.nvim
 time([[Config for presence.nvim]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\4\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\2\0\0009\0\2\0005\3\3\0B\0\3\1K\0\1\0\1\0\4\23enable_line_number\2\22neovim_image_text\15Neovim IDE\16auto_update\2\15main_image\vneovim\nsetup\rpresence\frequire\0", "config", "presence.nvim")
+try_loadstring("\27LJ\2\n�\1\0\0\4\0\4\0\b6\0\0\0'\2\1\0B\0\2\2\18\2\0\0009\0\2\0005\3\3\0B\0\3\1K\0\1\0\1\0\4\15main_image\vneovim\23enable_line_number\2\22neovim_image_text\15Neovim IDE\16auto_update\2\nsetup\rpresence\frequire\0", "config", "presence.nvim")
 time([[Config for presence.nvim]], false)
+-- Config for: undotree
+time([[Config for undotree]], true)
+try_loadstring("\27LJ\2\ny\0\0\6\0\b\0\v6\0\0\0009\0\1\0009\0\2\0'\2\3\0'\3\4\0006\4\0\0009\4\5\0049\4\6\0045\5\a\0B\0\5\1K\0\1\0\1\0\1\tdesc\20Toggle Undotree\19UndotreeToggle\bcmd\14<leader>u\6n\bset\vkeymap\bvim\0", "config", "undotree")
+time([[Config for undotree]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]

@@ -14,12 +14,12 @@ return require('packer').startup(function(use)
         require("toggleterm").setup {
             direction = 'float'
         }
-    end }
+    end
+    }
 
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
     use 'morhetz/gruvbox'
-
     use 'navarasu/onedark.nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'nvim-treesitter/playground'
@@ -140,4 +140,35 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-nvim-lsp-signature-help' -- Function signature help
     use 'dcampos/nvim-snippy'                 -- Alternative snippet engine (optional)
     use 'honza/vim-snippets'
+
+
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            local alpha = require('alpha')
+            local dashboard = require('alpha.themes.dashboard')
+
+            dashboard.section.header.val = {
+                "███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗",
+                "████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║",
+                "██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║",
+                "██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║",
+                "██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║",
+                "╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝",
+            }
+
+            dashboard.section.buttons.val = {
+                dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
+                dashboard.button("r", "  Recent files", ":Telescope oldfiles<CR>"),
+                dashboard.button("g", "  Live grep", ":Telescope live_grep<CR>"),
+                dashboard.button("n", "  New file", ":ene <BAR> startinsert<CR>"),
+                dashboard.button("q", "  Quit", ":qa<CR>"),
+            }
+
+            dashboard.section.footer.val = "Happy coding, Rishabh!"
+
+            alpha.setup(dashboard.opts)
+        end
+    }
 end)
