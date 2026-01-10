@@ -1,4 +1,3 @@
-vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
@@ -16,10 +15,15 @@ return require('packer').startup(function(use)
         }
     end
     }
+    use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
 
     use 'vim-airline/vim-airline'
     use 'vim-airline/vim-airline-themes'
-    use 'morhetz/gruvbox'
     use 'navarasu/onedark.nvim'
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
     use 'nvim-treesitter/playground'
@@ -30,6 +34,16 @@ return require('packer').startup(function(use)
             vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle Undotree" })
         end
     }
+
+
+    use 
+        {
+  "simrat39/rust-tools.nvim",
+  dependencies = { "neovim/nvim-lspconfig", "nvim-lua/plenary.nvim" }
+}
+
+ 
+ 
 
     use 'tpope/vim-fugitive'
     use {
@@ -58,7 +72,7 @@ return require('packer').startup(function(use)
         end
     }
 
-
+    use 'jose-elias-alvarez/null-ls.nvim'
     -- LSP Zero and dependencies
     use {
         'VonHeikemen/lsp-zero.nvim',
