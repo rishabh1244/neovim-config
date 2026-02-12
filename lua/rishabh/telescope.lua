@@ -17,5 +17,5 @@ vim.keymap.set("n", "<leader>fl", function()
   builtin.current_buffer_fuzzy_find()
 end, { desc = "Find in current file" })
 
-end, { desc = "Resume last search" })
+
 

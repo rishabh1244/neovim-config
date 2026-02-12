@@ -13,6 +13,11 @@ vim.keymap.set("i", "{", "{}<Left>")
 vim.keymap.set("i", "\"", "\"\"<Left>")
 vim.keymap.set("i", "'", "''<Left>")
 
+-- format code
+vim.keymap.set("n", "<leader>f", function()
+    vim.lsp.buf.format({ async = true })
+end, { buffer = bufnr, desc = "Format buffer" })
+
 -- Visual mode: Move lines up/down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

@@ -94,14 +94,6 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 
     -- Format on save
-    if client.server_capabilities.documentFormattingProvider then
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            buffer = bufnr,
-            callback = function()
-                vim.lsp.buf.format({ async = false })
-            end,
-        })
-    end
 end)
 
 lsp.setup()
