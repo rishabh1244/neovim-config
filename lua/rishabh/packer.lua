@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'folke/tokyonight.nvim'
     -- Telescope
+    use "numToStr/Comment.nvim"
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.8',
@@ -97,12 +98,7 @@ return require('packer').startup(function(use)
         }
     }
     -- Colorscheme
-    require('onedark').setup {
-        style = 'warmer',
-        background = 'hard'
-    }
-    require('onedark').load()
-    --discord presencei
+   --discord presencei
     use {
         'vyfor/cord.nvim',
         run = ':Cord update',

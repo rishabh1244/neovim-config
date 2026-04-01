@@ -13,6 +13,15 @@ vim.keymap.set("i", "{", "{}<Left>")
 vim.keymap.set("i", "\"", "\"\"<Left>")
 vim.keymap.set("i", "'", "''<Left>")
 
+
+-- indent selection right
+vim.keymap.set("v", "<Tab>", ">gv")
+
+-- indent selection left
+vim.keymap.set("v", "<S-Tab>", "<gv")
+
+-- unindent with backspace
+vim.keymap.set("v", "<BS>", "<gv")
 -- format code
 vim.keymap.set("n", "<leader>f", function()
     vim.lsp.buf.format({ async = true })

@@ -95,8 +95,17 @@ lsp.on_attach(function(client, bufnr)
 
     -- Format on save
 end)
+require("Comment.api").toggle.linewise.current()
+require("Comment").setup()
+vim.keymap.set("n", "<leader>/", function()
+    require("Comment.api").toggle.linewise.current()
+end, { desc = "Toggle comment line" })
+vim.keymap.set("v", "<leader>/", function()
+    require("Comment.api").toggle.linewise(vim.fn.visualmode())
+end, { desc = "Toggle comment selection" })
 
-lsp.setup()
+
+
 
 -- =============================
 -- nvim-cmp (Autocompletion)
