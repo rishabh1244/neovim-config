@@ -1,2 +1,8 @@
 require("rishabh")
-print("hello")
+
+
+require("nvim-tree").setup({
+  filters = {
+    dotfiles = false,  -- show .env etc
+  },
+})
