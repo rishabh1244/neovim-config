@@ -8,7 +8,6 @@ end, { desc = "Format file" })
 -- map
 map("n", "<leader>q", ":bdelete<CR>", { desc = "Close buffer" })
 map("n", "<leader>l", "V", { desc = "Select line" })
-
 -- terminals 
 map("n", "<leader>tf", "<cmd>1ToggleTerm direction=float<cr>",      { desc = "Float terminal" })
 map("n", "<leader>th", "<cmd>2ToggleTerm direction=horizontal<cr>", { desc = "Horizontal terminal" })
@@ -21,7 +20,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
     local opts = { buffer = 0 }
     map("t", "<leader>tf", "<cmd>1ToggleTerm<cr>", opts)
     map("t", "<leader>th", "<cmd>2ToggleTerm<cr>", opts)
-    map("t", "<Esc>", "<cmd>ToggleTerm<cr>", opts)
   end,
 })
 -- LSP
