@@ -41,6 +41,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 map("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file tree" })
 
 -- Telescope
+map("n", "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<cr>", {
+  desc = "Search in current file"
+})
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
