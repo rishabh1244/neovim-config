@@ -11,8 +11,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Winbar: shows breadcrumbs (function/class context)
-vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local bufnr = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.server_capabilities.documentSymbolProvider then
+      vim.wo.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+    end
+  end,
+})
 require("lazy").setup({
   -- colorscheme
   {
@@ -82,6 +89,7 @@ require("lazy").setup({
             treesitter = false,
           },
         },
+
       })
     end,
   },
@@ -98,7 +106,7 @@ require("lazy").setup({
     end,
   },
   -- Navic (breadcrumbs)
-  { "SmiteshP/nvim-navic", dependencies = "neovim/nvim-lspconfig" },
+  { "SmiteshP/nvim-navic",  dependencies = "neovim/nvim-lspconfig" },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -109,7 +117,6 @@ require("lazy").setup({
           pcall(vim.treesitter.start, args.buf)
         end,
       })
-      vim.cmd("TSUpdate")
     end,
   },
   -- LSP
@@ -216,9 +223,9 @@ require("lazy").setup({
     config = function() require("nvim-autopairs").setup() end
   },
   -- Comments
-  { "numToStr/Comment.nvim", config = function() require("Comment").setup() end },
+  { "numToStr/Comment.nvim",   config = function() require("Comment").setup() end },
   -- Which-key (keybinding hints)
-  { "folke/which-key.nvim",  config = function() require("which-key").setup() end },
+  { "folke/which-key.nvim",    config = function() require("which-key").setup() end },
   -- Formatter
   {
     "stevearc/conform.nvim",
@@ -239,3 +246,38 @@ require("lazy").setup({
     end,
   },
 })
+
+local spec = {
+    "yunusey/codeforces-nvim",
+    dependencies = { "nvim-lua/plenary.nvim" } -- optional, used for testing
+}
+
+spec.config = function()
+    require('codeforces-nvim').setup {
+        use_term_toggle = true,
+        cf_path = "/path/to/desired/codeforces/folder",
+        timeout = 15000,
+        compiler = {
+            cpp = { "g++", "@.cpp", "-o", "@" },
+            py = {}
+        },
+        run = {
+            cpp = { "@" },
+            py = { "python3", "@.py" }
+        },
+        notify = function(title, message, type)
+            local notify = require('notify')
+            if message == nil then
+                notify(title, type, {
+                    render = "minimal",
+                })
+            else
+                notify(message, type, {
+                    title = title,
+                })
+            end
+        end
+    }
+end
+
+return spec

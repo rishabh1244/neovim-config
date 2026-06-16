@@ -9,7 +9,7 @@ opt.undofile = true
 opt.undodir = vim.fn.stdpath("data") .. "/undodir"
 
 opt.number = true
-opt.relativenumber = true
+opt.relativenumber = false
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
