@@ -21,7 +21,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 require("lazy").setup({
+  { import = "plugins" },
+
   -- colorscheme
+ 
+
   {
     "navarasu/onedark.nvim",
     lazy = false,

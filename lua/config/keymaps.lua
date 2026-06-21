@@ -70,3 +70,7 @@ map("v", ">", ">gv")
 -- Move lines up/down
 map("n", "<A-j>", ":m .+1<CR>==")
 map("n", "<A-k>", ":m .-2<CR>==")
+
+--comment 
+vim.keymap.set("n", "L", "gcc", { remap = true, desc = "Comment out current line" })
+vim.keymap.set("v", "L", "gc", { remap = true, desc = "Comment out selection" })
