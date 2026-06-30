@@ -38,6 +38,23 @@ require("lazy").setup({
       require("onedark").load()
     end,
   },
+ {
+    "NvChad/nvim-colorizer.lua",
+    config = function()
+        require("colorizer").setup({
+            "*",
+        }, {
+            RGB = true,
+            RRGGBB = true,
+            names = true,
+            RRGGBBAA = true,
+            css = true,
+            css_fn = true,
+            mode = "background", -- color the actual text background
+        })
+    end,
+},
+
   {
     "mbbill/undotree",
     config = function()

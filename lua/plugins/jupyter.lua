@@ -108,9 +108,8 @@ return {
           local map = function(mode, lhs, rhs, desc)
             vim.keymap.set(mode, lhs, rhs, { buffer = buf, desc = desc, silent = true })
           end
-
-          map("n", "<leader>ji", ":MoltenInit<CR>", "Jupyter: init kernel")
-          map("n", "<leader>jr", run_cell, "Jupyter: run cell")
+          map("n", "<leader>ji", ":MoltenInit venv<CR>", "Jupyter: init kernel (venv)")
+          map("n", "<leader>jI", ":MoltenInit<CR>", "Jupyter: init kernel (choose)")
           map("n", "<leader>jl", ":MoltenEvaluateLine<CR>", "Jupyter: run line")
           map("v", "<leader>jv", ":<C-u>MoltenEvaluateVisual<CR>gv", "Jupyter: run selection")
           map("n", "<leader>jo", ":MoltenShowOutput<CR>", "Jupyter: show output")
