@@ -24,7 +24,7 @@ require("lazy").setup({
   { import = "plugins" },
 
   -- colorscheme
- 
+
 
   {
     "navarasu/onedark.nvim",
@@ -38,22 +38,22 @@ require("lazy").setup({
       require("onedark").load()
     end,
   },
- {
+  {
     "NvChad/nvim-colorizer.lua",
     config = function()
-        require("colorizer").setup({
-            "*",
-        }, {
-            RGB = true,
-            RRGGBB = true,
-            names = true,
-            RRGGBBAA = true,
-            css = true,
-            css_fn = true,
-            mode = "background", -- color the actual text background
-        })
+      require("colorizer").setup({
+        "*",
+      }, {
+        RGB = true,
+        RRGGBB = true,
+        names = true,
+        RRGGBBAA = true,
+        css = true,
+        css_fn = true,
+        mode = "background",     -- color the actual text background
+      })
     end,
-},
+  },
 
   {
     "mbbill/undotree",
@@ -127,7 +127,7 @@ require("lazy").setup({
     end,
   },
   -- Navic (breadcrumbs)
-  { "SmiteshP/nvim-navic",  dependencies = "neovim/nvim-lspconfig" },
+  { "SmiteshP/nvim-navic", dependencies = "neovim/nvim-lspconfig" },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -244,9 +244,9 @@ require("lazy").setup({
     config = function() require("nvim-autopairs").setup() end
   },
   -- Comments
-  { "numToStr/Comment.nvim",   config = function() require("Comment").setup() end },
+  { "numToStr/Comment.nvim", config = function() require("Comment").setup() end },
   -- Which-key (keybinding hints)
-  { "folke/which-key.nvim",    config = function() require("which-key").setup() end },
+  { "folke/which-key.nvim",  config = function() require("which-key").setup() end },
   -- Formatter
   {
     "stevearc/conform.nvim",
@@ -269,36 +269,36 @@ require("lazy").setup({
 })
 
 local spec = {
-    "yunusey/codeforces-nvim",
-    dependencies = { "nvim-lua/plenary.nvim" } -- optional, used for testing
+  "yunusey/codeforces-nvim",
+  dependencies = { "nvim-lua/plenary.nvim" }   -- optional, used for testing
 }
 
 spec.config = function()
-    require('codeforces-nvim').setup {
-        use_term_toggle = true,
-        cf_path = "/path/to/desired/codeforces/folder",
-        timeout = 15000,
-        compiler = {
-            cpp = { "g++", "@.cpp", "-o", "@" },
-            py = {}
-        },
-        run = {
-            cpp = { "@" },
-            py = { "python3", "@.py" }
-        },
-        notify = function(title, message, type)
-            local notify = require('notify')
-            if message == nil then
-                notify(title, type, {
-                    render = "minimal",
-                })
-            else
-                notify(message, type, {
-                    title = title,
-                })
-            end
-        end
-    }
+  require('codeforces-nvim').setup {
+    use_term_toggle = true,
+    cf_path = "/path/to/desired/codeforces/folder",
+    timeout = 15000,
+    compiler = {
+      cpp = { "g++", "@.cpp", "-o", "@" },
+      py = {}
+    },
+    run = {
+      cpp = { "@" },
+      py = { "python3", "@.py" }
+    },
+    notify = function(title, message, type)
+      local notify = require('notify')
+      if message == nil then
+        notify(title, type, {
+          render = "minimal",
+        })
+      else
+        notify(message, type, {
+          title = title,
+        })
+      end
+    end
+  }
 end
 
 return spec
