@@ -39,6 +39,20 @@ require("lazy").setup({
     end,
   },
   {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {
+      indent = {
+        char = "│",
+      },
+      scope = {
+        enabled = true,
+        show_start = true,
+        show_end = true,
+      },
+    },
+  },
+  {
     "NvChad/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({
@@ -50,7 +64,7 @@ require("lazy").setup({
         RRGGBBAA = true,
         css = true,
         css_fn = true,
-        mode = "background",     -- color the actual text background
+        mode = "background", -- color the actual text background
       })
     end,
   },
@@ -270,7 +284,7 @@ require("lazy").setup({
 
 local spec = {
   "yunusey/codeforces-nvim",
-  dependencies = { "nvim-lua/plenary.nvim" }   -- optional, used for testing
+  dependencies = { "nvim-lua/plenary.nvim" } -- optional, used for testing
 }
 
 spec.config = function()
