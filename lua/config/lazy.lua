@@ -102,14 +102,10 @@ require("lazy").setup({
           show_close_icon = false,
           always_show_bufferline = false,
           diagnostics = "nvim_lsp",
-
           name_formatter = function(buf)
-            local name = vim.fn.fnamemodify(buf.path, ":t")
-            local parent = vim.fn.fnamemodify(buf.path, ":h:t")
-
-            if parent == "." then
-              return name
-            end
+            local path = buf.path
+            local name = vim.fn.fnamemodify(path, ":t")
+            local parent = vim.fn.fnamemodify(path, ":h:t")
 
             return parent .. "/" .. name
           end,
