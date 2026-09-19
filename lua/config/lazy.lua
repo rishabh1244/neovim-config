@@ -102,6 +102,17 @@ require("lazy").setup({
           show_close_icon = false,
           always_show_bufferline = false,
           diagnostics = "nvim_lsp",
+
+          name_formatter = function(buf)
+            local name = vim.fn.fnamemodify(buf.path, ":t")
+            local parent = vim.fn.fnamemodify(buf.path, ":h:t")
+
+            if parent == "." then
+              return name
+            end
+
+            return parent .. "/" .. name
+          end,
         },
       })
     end,
@@ -110,7 +121,14 @@ require("lazy").setup({
   {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function() require("nvim-tree").setup() end
+    config = function()
+      require("nvim-tree").setup({
+        update_focused_file = {
+          enable = true,
+          update_root = false,
+        },
+      })
+    end,
   },
   -- Fuzzy finder
   {
