@@ -297,11 +297,29 @@ require("lazy").setup({
 })
 -- Diagnostics
 vim.diagnostic.config({
-  virtual_text = true,
+  virtual_text = false,
+  virtual_lines = false,
   signs = true,
   underline = true,
-  update_in_insert = true,
+  update_in_insert = false,
 })
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+  callback = function()
+    local mode = vim.api.nvim_get_mode().mode
+
+    if mode == "i" then
+      vim.diagnostic.config({
+        virtual_lines = false,
+      })
+    else
+      vim.diagnostic.config({
+        virtual_lines = true,
+      })
+    end
+  end,
+})
+
 local spec = {
   "yunusey/codeforces-nvim",
   dependencies = { "nvim-lua/plenary.nvim" } -- optional, used for testing
