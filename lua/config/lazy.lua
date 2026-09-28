@@ -295,7 +295,13 @@ require("lazy").setup({
     end,
   },
 })
-
+-- Diagnostics
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+})
 local spec = {
   "yunusey/codeforces-nvim",
   dependencies = { "nvim-lua/plenary.nvim" } -- optional, used for testing
